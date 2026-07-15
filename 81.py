@@ -1,4 +1,4 @@
-# save student info to a file 
+# save student info to a file
 
 class Student:
     def __init__(self, name, age, marks):
@@ -10,28 +10,41 @@ class Student:
         print("Name: ", self.name)
         print("Age: ", self.age)
         print("Marks: ", self.marks)
-        
 
-name = input("enter the name: ")
-age = int(input("enter the age: "))
-marks = float(input("enter the marks: "))
 
-student1 = Student(name, age, marks)
-student1.display()
+while True:
+    name = input("Enter the name: ")
+    age = int(input("Enter the age: "))
+    marks = float(input("Enter the marks: "))
 
-with open("student.txt", "w") as f:
-    f.write(f"Name: {student1.name}\n")
-    f.write(f"Age: {student1.age}\n")
-    f.write(f"Marks: {student1.marks}\n")
-    f.write("\n")
+    student1 = Student(name, age, marks)
 
+    print("\nStudent Details")
+    print("-" * 20)
+    student1.display()
+
+    # Append student details to file
+    with open("student.txt", "a") as f:
+        f.write(f"Name: {student1.name}\n")
+        f.write(f"Age: {student1.age}\n")
+        f.write(f"Marks: {student1.marks}\n")
+        f.write("-" * 20 + "\n")
+
+    choice = input("\nDo you want to add another student? (yes/no): ").lower()
+
+    if choice != "yes":
+        break
+
+
+# Read all student details from file
 with open("student.txt", "r") as f:
-    print("-"*20)
-    print("student details")
-    print("-"*20)
+    print("\n" + "-" * 20)
+    print("Student Details")
+    print("-" * 20)
     print(f.read())
 
-print("program ended here")    
+print("Program ended here")
+
 
 
 
