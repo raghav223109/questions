@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 #add another messages  for the person to work on
-=======
+
 # fixed code of 1.py
 x = 102
 if x > 2:
@@ -14,4 +14,3 @@ print("programming done")
 print("program ends here")
 print("one more bug detected and fixed")
 print("fourth bug fixed")
->>>>>>> fixed_files
