@@ -1,3 +1,4 @@
+# armstrong number in a given range 
 a = int(input())
 b = int(input())
 
